@@ -10,16 +10,15 @@ const onSignUp = (event) => {
 
   api.signUp(data)
   .done(ui.signUpSuccess)
-  .fail(ui.signUpError)
+  .fail(ui.errorMessage)
 }
 
 const onSignIn = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-
   api.signIn(data)
   .done(ui.signInSuccess)
-  .fail(ui.signInError)
+  .fail(ui.errorMessage)
 }
 
 const onChangePassword = (event) => {
@@ -28,7 +27,7 @@ const onChangePassword = (event) => {
 
   api.changePassword(data)
   .done(ui.changePasswordSuccess)
-  .fail(ui.changePasswordError)
+  .fail(ui.errorMessage)
 }
 
 const onSignOut = (event) => {
@@ -37,7 +36,7 @@ const onSignOut = (event) => {
 
   api.signOut(data)
   .done(ui.signOutSuccess)
-  .fail(ui.signOutError)
+  .fail(ui.errorMessage)
 }
 
 const addHandlers = () => {
