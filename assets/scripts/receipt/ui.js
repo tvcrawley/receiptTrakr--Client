@@ -27,6 +27,7 @@ const userMessage = function (message) {
 const receiptCreateSuccess = function (data) {
   console.log('data is ', data)
   userMessage('Receipt Created')
+  $('tbody').append(`<tr><td>${data.receipt.company}</td><td>${data.receipt.amount}</td><td>${data.receipt.purpose}</td><td>${data.receipt.product}</td></tr>`)
 }
 
 const errorMessage = (error) => {
