@@ -15,6 +15,18 @@ const receiptCreate = (data) => {
   })
 }
 
+const receiptIndex = (data) => {
+  console.log('api data: ', data)
+  return $.ajax({
+    url: config.apiOrigin + '/receipts',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  receiptCreate
+  receiptCreate,
+  receiptIndex
 }

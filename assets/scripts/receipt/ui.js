@@ -30,6 +30,17 @@ const receiptCreateSuccess = function (data) {
   $('tbody').append(`<tr><td>${data.receipt.company}</td><td>${data.receipt.amount}</td><td>${data.receipt.purpose}</td><td>${data.receipt.product}</td></tr>`)
 }
 
+const receiptIndexSuccess = function (data) {
+  console.log('data is ', data)
+  userMessage('Receipt Index')
+  // loop through receipts to assign values to table
+  const receipts = data.receipts
+  $.each(receipts, function (i) {
+    console.log('i receipts: ', data.receipts[i])
+    $('tbody').append(`<tr><td>${data.receipts[i].company}</td><td>${data.receipts[i].amount}</td><td>${data.receipts[i].purpose}</td><td>${data.receipts[i].product}</td></tr>`)
+  })
+}
+
 const errorMessage = (error) => {
   console.error(error)
   userMessage('Error Occurred')
@@ -37,5 +48,6 @@ const errorMessage = (error) => {
 
 module.exports = {
   receiptCreateSuccess,
+  receiptIndexSuccess,
   errorMessage
 }
