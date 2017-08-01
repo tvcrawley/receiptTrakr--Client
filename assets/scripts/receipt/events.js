@@ -24,9 +24,20 @@ const onReceiptIndex = (event) => {
     .fail(ui.errorMessage)
 }
 
+const onReceiptShow = (event) => {
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.receiptShow(data)
+    .done(ui.receiptShowSuccess)
+    .fail(ui.errorMessage)
+}
+
 const addHandlers = () => {
   $('#receipt-create').on('submit', onReceiptCreate)
   $('#receipt-index').on('submit', onReceiptIndex)
+  $('#receipt-show').on('submit', onReceiptShow)
 }
 
 module.exports = {

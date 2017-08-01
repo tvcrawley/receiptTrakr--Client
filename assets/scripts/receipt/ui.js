@@ -41,6 +41,14 @@ const receiptIndexSuccess = function (data) {
   })
 }
 
+const receiptShowSuccess = function (data) {
+  console.log('show data is ', data)
+  userMessage('Receipt Show')
+  // loop through receipts to assign values to table
+  // const receipt = data.receipts
+  $('tbody').append(`<tr><td>${data.receipt.company}</td><td>${data.receipt.amount}</td><td>${data.receipt.purpose}</td><td>${data.receipt.product}</td></tr>`)
+}
+
 const errorMessage = (error) => {
   console.error(error)
   userMessage('Error Occurred')
@@ -49,5 +57,6 @@ const errorMessage = (error) => {
 module.exports = {
   receiptCreateSuccess,
   receiptIndexSuccess,
+  receiptShowSuccess,
   errorMessage
 }
