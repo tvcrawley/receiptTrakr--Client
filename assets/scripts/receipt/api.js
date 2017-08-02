@@ -37,8 +37,21 @@ const receiptShow = (data) => {
   })
 }
 
+const receiptUpdate = (data) => {
+  console.log('update api data: ', data)
+  return $.ajax({
+    url: config.apiOrigin + '/receipts/' + data.receipt.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   receiptCreate,
   receiptIndex,
-  receiptShow
+  receiptShow,
+  receiptUpdate
 }
