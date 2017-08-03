@@ -55,6 +55,12 @@ const receiptUpdateSuccess = function (data) {
   $('tbody').append(`<tr><td>${data.receipt.company}</td><td>${data.receipt.amount}</td><td>${data.receipt.purpose}</td><td>${data.receipt.product}</td></tr>`)
 }
 
+const receiptDestroySuccess = function (data) {
+  console.log('destroy data is ', data)
+  userMessage('Receipt Destroy')
+  // remove receipt from table
+}
+
 const errorMessage = (error) => {
   console.error(error)
   userMessage('Error Occurred')
@@ -65,5 +71,6 @@ module.exports = {
   receiptIndexSuccess,
   receiptShowSuccess,
   receiptUpdateSuccess,
+  receiptDestroySuccess,
   errorMessage
 }

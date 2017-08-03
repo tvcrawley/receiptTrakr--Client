@@ -44,11 +44,22 @@ const onReceiptUpdate = (event) => {
     .fail(ui.errorMessage)
 }
 
+const onReceiptDestroy = (event) => {
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.receiptDestroy(data)
+    .done(ui.receiptDestroySuccess)
+    .fail(ui.errorMessage)
+}
+
 const addHandlers = () => {
   $('#receipt-create').on('submit', onReceiptCreate)
   $('#receipt-index').on('submit', onReceiptIndex)
   $('#receipt-show').on('submit', onReceiptShow)
   $('#receipt-update').on('submit', onReceiptUpdate)
+  $('#receipt-destroy').on('submit', onReceiptDestroy)
 }
 
 module.exports = {

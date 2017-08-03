@@ -49,9 +49,21 @@ const receiptUpdate = (data) => {
   })
 }
 
+const receiptDestroy = (data) => {
+  console.log('destroy api data: ', data)
+  return $.ajax({
+    url: config.apiOrigin + '/receipts/' + data.receipt.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   receiptCreate,
   receiptIndex,
   receiptShow,
-  receiptUpdate
+  receiptUpdate,
+  receiptDestroy
 }
