@@ -33,6 +33,7 @@ const receiptCreateSuccess = function (data) {
 const receiptIndexSuccess = function (data) {
   console.log('data is ', data)
   userMessage('Receipt Index')
+  $('tbody').empty()
   // loop through receipts to assign values to table
   const receipts = data.receipts
   $.each(receipts, function (i) {
