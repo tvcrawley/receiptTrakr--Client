@@ -1,6 +1,9 @@
 # Receipt Trakr
 
 ## An app to keep record of receipts
+This project is using the
+[Browser Template](https://git.generalassemb.ly/ga-wdi-boston/browser-template)
+from General Assembly.
 
 ### User Stories
 
