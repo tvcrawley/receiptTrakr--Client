@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <h1>ReceiptTrakr</h1>
+      <p id='message'>
+
+      </p>
+      <form id='sign-up'>
+        <fieldset>
+          <legend>Sign Up!</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+          <input type="submit" name="submit" value="Sign Up!" class="btn btn-primary">
+        </fieldset>
+      </form>
+      <form id='sign-in'>
+        <fieldset>
+          <legend>Sign In!</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" name="submit" value="Sign In!" class="btn btn-primary">
+        </fieldset>
+      </form>
+      <form id='change-password'>
+        <fieldset>
+          <legend>Change Password!</legend>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" name="submit" value="Change Password" class="btn btn-primary">
+        </fieldset>
+      </form>
+      <form id='sign-out'>
+        <fieldset>
+          <legend>Sign Out!</legend>
+          <input type="submit" name="submit" value="Sign Out!" class="btn btn-primary">
+        </fieldset>
+      </form>
+      <table class='table'>
+        <thead>
+          <tr>
+            <td>Company</td>
+            <td>Amount</td>
+            <td>Purpose</td>
+            <td>Product</td>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <div>
+        <form id='receipt-create'>
+          <fieldset>
+            <legend>Create Receipt</legend>
+            <input type="text" name="receipt[company]" placeholder="Company">
+            <input type="text" name="receipt[amount]" placeholder="Amount">
+            <input type="text" name="receipt[purpose]" placeholder="Purpose">
+            <input type="text" name="receipt[product]" placeholder="Product">
+            <input type="submit" name="submit" value="Create Receipt" class="btn btn-warning">
+          </fieldset>
+        </form>
+        <form id='receipt-index'>
+          <fieldset>
+            <legend>Receipt Index</legend>
+            <input type="submit" name="submit" value="Get Receipts" class="btn btn-warning">
+          </fieldset>
+        </form>
+        <form id='receipt-show'>
+          <fieldset>
+            <legend>Receipt Show</legend>
+            <input type="text" name="receipt[id]" placeholder="ID">
+            <input type="submit" name="submit" value="Get Receipt" class="btn btn-warning">
+          </fieldset>
+        </form>
+        <form id='receipt-update'>
+          <fieldset>
+            <legend>Receipt Update</legend>
+            <input type="text" name="receipt[id]" placeholder="ID">
+            <input type="text" name="receipt[company]" placeholder="Company">
+            <input type="text" name="receipt[amount]" placeholder="Amount">
+            <input type="text" name="receipt[purpose]" placeholder="Purpose">
+            <input type="text" name="receipt[product]" placeholder="Product">
+            <input type="submit" name="submit" value="Update Receipt" class="btn btn-warning">
+          </fieldset>
+        </form>
+        <form id='receipt-destroy'>
+          <fieldset>
+            <legend>Receipt Destroy</legend>
+            <input type="text" name="receipt[id]" placeholder="ID">
+            <input type="submit" name="submit" value="Destroy Receipt" class="btn btn-warning">
+          </fieldset>
+        </form>
+      </div>
+    </body>
+</html>
